@@ -18,7 +18,7 @@ module.exports = async function embeds(err, site, res, msg, pending, reqTime) {
 			},
 			{
 				name: 'Código de estado:',
-				value: `*${res.res?.statusCode}*`,
+				value: `*${res.res ? res.res.statusCode : null}*`,
 				inline: true,
 			}
 		)
@@ -40,7 +40,7 @@ module.exports = async function embeds(err, site, res, msg, pending, reqTime) {
 			},
 			{
 				name: 'Mensaje de error:',
-				value: `*${res.err?.code}*`,
+				value: `*${res.err ? res.err.code : null}*`,
 				inline: true,
 			}
 		)
