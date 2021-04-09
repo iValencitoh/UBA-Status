@@ -10,4 +10,4 @@ A discord bot that helps to know if some pages of the University of Buenos Aires
 * *(Listening suggestions)*
 
 ### License
-[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
+[MIT](https://choosealicense.com/licenses/mit/)
