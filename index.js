@@ -16,8 +16,6 @@ console.clear();
 
 if (mobile) {
 	Constants.DefaultOptions.ws.properties.$browser = 'Discord Android';
-} else {
-	Constants.DefaultOptions.ws.properties.$browser = 'discord.js';
 }
 
 client.on('ready', () => {
