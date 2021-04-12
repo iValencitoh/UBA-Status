@@ -4,6 +4,7 @@ const {
 } = require('../../config/settings.json');
 const https = require('../../functions/https');
 const embeds = require('../../functions/embeds-alerts');
+const randBetween = require('../../functions/randBetween');
 var refreshTime = randBetween(refreshTimeMin, refreshTimeMax);
 var lastRequestError = false;
 
