@@ -25,6 +25,7 @@ setInterval(async () => {
 
 	if (lastRequestError) {
 		embeds(false, site, res, reqTime); // La página volvió a estar en línea. (enviar anuncio)
+		lastRequestError = false;
 		return;
 	}
 }, refreshTime * 1000);
