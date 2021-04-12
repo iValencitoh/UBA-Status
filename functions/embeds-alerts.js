@@ -36,7 +36,7 @@ module.exports = async function embeds(err, site, res, reqTime) {
 				)
 				.addFields(
 					{
-						name: 'Tiempo de respuesta:',
+						name: 'Tiempo esperado:',
 						value: `*${ms}ms*`,
 						inline: true,
 					},
