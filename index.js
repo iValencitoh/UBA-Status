@@ -2,8 +2,10 @@ require('dotenv').config();
 const fs = require('fs');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Constants = require('./node_modules/discord.js/src/util/Constants.js');
-const loadCommands = require('./commands/handler/loader.js');
+const Constants = require('./node_modules/discord.js/src/util/Constants');
+const loadCommands = require('./commands/handler/loader');
+const { loadChannels } = require('./util/channel');
+const loadTasks = require('./tasks/loader');
 const {
 	status,
 	statusAction,
@@ -28,6 +30,8 @@ client.on('ready', () => {
 		});
 	}
 
+	loadTasks();
+	loadChannels(client);
 	loadCommands(client);
 });
 

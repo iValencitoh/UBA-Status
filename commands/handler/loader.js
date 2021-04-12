@@ -2,8 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const commandHandler = require(`./handler.js`);
 module.exports = (client) => {
-	const commands = [];
-
 	const loadCommands = (dir) => {
 		// Read the files in the commands folder
 		const files = fs.readdirSync(path.join(__dirname, dir));
@@ -17,7 +15,6 @@ module.exports = (client) => {
 			} else if (file !== 'handler.js' && file !== 'loader.js') {
 				// If it's not a folder and/or the cmd handler/loader, we can try to read them
 				const option = require(path.join(__dirname, dir, file));
-				commands.push(option);
 				if (client) {
 					commandHandler(client, option); // Load the command.
 				}
@@ -26,6 +23,5 @@ module.exports = (client) => {
 	};
 
 	loadCommands('../../commands/');
-
-	return commands;
+	return;
 };

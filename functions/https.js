@@ -7,7 +7,7 @@ module.exports = function httpsRequest(hostname, port, path, method, timeout) {
 			port: port || 443,
 			path: path || '/',
 			method: method || 'GET',
-			timeout: timeout || 10000,
+			timeout: timeout || 15000,
 		};
 
 		const req = https.request(options, (res) => {

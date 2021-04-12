@@ -5,31 +5,42 @@ module.exports = {
 	name: 'Status',
 	commands: ['status'],
 	cooldown: 10,
-	minArgs: 1,
+	minArgs: 0,
 	maxArgs: 2,
-	execute: (msg, args, text) => {
+	execute: (msg, args, text, client) => {
+		if (!text) {
+			msg.react('✅');
+			msg.channel.send(
+				`${msg.author}, las posibles variables/combinaciones serían, por ejemplo: \`<xxi/campus 21/xxi campus/cbc/campus cbc/guarani/siu/ccb/uba>\` entre otras.`
+			);
+			return;
+		}
+
 		if (contains(text, ['campus'])) {
 			if (contains(text, ['xxi', '21'])) {
-				request('www.ubaxxicampusvirtual.uba.ar', msg); // UBA XXI (Campus)
+				request('www.ubaxxicampusvirtual.uba.ar', msg, client); // UBA XXI (Campus)
 				return;
 			}
 			if (contains(text, ['cbc', 'ccb'])) {
-				request('cbccampusvirtual.uba.ar', msg); // CBC (Campus)
+				request('cbccampusvirtual.uba.ar', msg, client); // CBC (Campus)
 				return;
 			}
 		}
 
 		if (contains(text, ['siu', 'guarani'])) {
-			request('guarani.uba.ar', msg); // SIU Guaraní
+			request('guarani.uba.ar', msg, client); // SIU Guaraní
 			return;
-		} else if (contains(text, ['xxi', '21'])) {
-			request('ubaxxi.uba.ar', msg); // UBA XXI
+		}
+		if (contains(text, ['xxi', '21'])) {
+			request('ubaxxi.uba.ar', msg, client); // UBA XXI
 			return;
-		} else if (contains(text, ['cbc', 'ccb'])) {
-			request('www.cbc.uba.ar', msg); // CBC
+		}
+		if (contains(text, ['cbc', 'ccb'])) {
+			request('www.cbc.uba.ar', msg, client); // CBC
 			return;
-		} else if (contains(text, ['uba'])) {
-			request('uba.ar', msg); // UBA
+		}
+		if (contains(text, ['uba'])) {
+			request('uba.ar', msg, client); // UBA
 			return;
 		}
 

@@ -3,5 +3,7 @@
 	"status": true,
 	"statusAction": 3,
 	"statusMessage": "las páginas de la UBA.",
-	"mobile": true
+	"mobile": true,
+	"refreshTimeMax": 120,
+	"refreshTimeMin": 60
 }
