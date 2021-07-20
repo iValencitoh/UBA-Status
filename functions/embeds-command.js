@@ -34,7 +34,7 @@ module.exports = async function embeds(err, site, res, msg, pending, reqTime) {
 		.setDescription('La página web se encuentra fuera de línea.')
 		.addFields(
 			{
-				name: 'Tiempo de respuesta:',
+				name: 'Tiempo esperado:',
 				value: `*${ms}ms*`,
 				inline: true,
 			},
