@@ -91,7 +91,7 @@ module.exports = (client, commandOptions) => {
 				!content.toLowerCase().startsWith(`${command} `) &&
 				content.toLowerCase() !== command
 			) {
-				return;
+				continue;
 			}
 
 			if (serverOnly && !msg.guild) {
